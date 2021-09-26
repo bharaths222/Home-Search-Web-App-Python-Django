@@ -1,0 +1,52 @@
+ {% comment %} <div class="dropdown mega-dropdown">
+            <button class="btn btn-info dropdown-toggle bg-white text-dark border" style="width:120px;" type="button" id="dropdownMenuButton-more" data-toggle="dropdown">
+                Any Price
+            </button>
+        <div class="dropdown-menu" id="pricedropdown" aria-labelledby="dropdownMenuButton" style="width:240px">
+            <p class="text-muted" style="padding-left:10px">Price Range</p>
+            <div class="row" style="margin-top:-10px">
+                <div class="col-md-6">
+                    <select name="min_price" class="form-control" style="width:100px; margin-left:10px">
+                        <option value="" selected="true">No Min</option>
+                        {% for key,value in min_price_choices.items %}
+                        <option value="{{ key }}" {% if key == values.min_price %} selected {% endif %}>
+                            {{ value }} 
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <select name="max_price" class="form-control" style="width:100px; margin-left:-10px" >
+                        <option value="" selected="true">No Max</option>
+                        {% for key,value in max_price_choices.items %}
+                        <option value="{{ key }}" {% if key == values.max_price %} selected {% endif %}>
+                            {{ value }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </div> 
+    </div> {% endcomment %}
+
+    <div class="col-md-2">
+        <select name="min_price" class="form-control" id="minprice">
+            <option value="" selected="true" disabled="disabled">Min Price</option>
+            {% for key,value in min_price_choices.items %}
+            <option value="{{ key }}" {% if key == values.min_price %} selected {% endif %}>
+                ₹ {{ value }} 
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="col-md-2">
+        <select name="max_price" class="form-control" id="maxprice">
+            <option value="" selected="true" disabled="disabled">Max Price</option>
+            {% for key,value in max_price_choices.items %}
+            <option value="{{ key }}" {% if key == values.max_price %} selected {% endif %}>
+                ₹ {{ value }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+

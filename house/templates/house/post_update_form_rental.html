@@ -1,0 +1,33 @@
+{% extends 'house/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}   
+<link rel="stylesheet" type="text/css" href="{% static 'house/hide_searchbar.css' %}">
+        
+        <div class="container">
+            <div>
+                    {% include 'house/snippet/alert_messages.html'%}
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-md-8 mx-auto">
+                    <div class="card padding-card">
+                        <div class="card-header text-center">
+                            Update Post
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-pane">
+                                <form method="post" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {% include 'house/snippet/post_create_rental_form.html' %}
+                                    <br>
+                                    <button type="submit" class="btn btn-success btn-block">Save</button>
+                                    <br>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}  

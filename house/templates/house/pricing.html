@@ -1,0 +1,78 @@
+{% extends "house/base.html" %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'house/hide_searchbar.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'house/posts_list.css' %}">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card bg-transaparent mb-3 text-center" style="width: 250px; border: 0.1px dotted">
+                <div class="card-header" style="font-size:22px">Free</div>
+                <div class="card-body" style="padding-left:45px">
+                    <h5 class="card-title">30 days</h5>
+                    <p class="card-text">
+                        <p>Limited Visibility</p>
+                        <br>
+                    </p>
+                    <a href="{% url 'post-create' %}" class="btn btn-secondary">Select</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card bg-transaparent mb-3 text-center" style="width: 250px; border: 0.1px dotted">
+                <div class="card-header" style="font-size:22px">₹ 499</div>
+                <div class="card-body" style="padding-left:45px">
+                    <h5 class="card-title">45 days</h5>
+                    <p class="card-text">
+                        <p>High Visibility</p>
+                        <br>
+                    </p>
+                    <a href="{% url 'post-create' %}" class="btn btn-secondary">Select</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card bg-transaparent mb-3 text-center" style="width: 250px; border: 0.1px dotted">
+                <div class="card-header" style="font-size:22px">₹ 999</div>
+                <div class="card-body"  style="padding-left:45px">
+                    <h5 class="card-title">60 days</h5>
+                        <p>
+                        High Visibility 
+                        <br>
+                        Featured tag
+                        </p>
+                        <br>
+                    <a href="{% url 'post-create' %}" class="btn btn-secondary">Select</a>
+                </div>
+                <div class="card-img-overlay">
+                        <span class="badge badge-warning" id="badge-recommended">Recommended</span>
+                </div> 
+            </div>
+        </div>
+        {% comment %} <div class="col-sm-3">
+            <div class="card bg-transaparent mb-3 text-center" style="max-width: 18rem; border: 0.1px dotted">
+                <div class="card-header" style="font-size:22px">₹ 1999</div>
+                <div class="card-body">
+                    <h5 class="card-title">90 days</h5>
+                        <p>
+                        Highest Visibility 
+                        <br>
+                        Featured tag
+                        </p>
+                        <br>
+                    <a href="{% url 'post-create' %}" class="btn btn-secondary">Select</a>
+                </div>
+            </div>
+        </div> {% endcomment %}
+    </div>
+</div>
+
+{% endblock content %}

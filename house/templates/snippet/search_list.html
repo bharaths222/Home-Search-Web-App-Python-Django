@@ -1,0 +1,185 @@
+{% extends "house/base.html" %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+<div class="row text-center">
+    <div class="col-lg-9 col-md-9 col-sm-9">
+        <form action="{% url 'home' %}">
+            <!-- Form Row -->
+                <div class="form-row">
+                    <div class="col-lg-3 col-md-3 col-sm-3">
+                        <label class="sr-only">Search bar</label>
+                        <input class="form-control mr-md-2" type="text" name='search' value="{{ request.GET.search }}" placeholder="Search for City, Neighborhood, Zipcode">
+                        <button class="btn btn-secondary my-2 my-md-0" type="submit">Search</button>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3">
+                        <label class="sr-only">House Type</label>
+                        <select name="house_type" class="form-control" onchange="this.form.submit()">
+                            <!-- Preserve the form input -->
+                            {% for key,value in house_type_choices.items %}
+                                <option value="{{ key }}" 
+                                    {% if key == values.house_type %} selected {% endif %}>
+                                    {{ value }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2">
+                        <label class="sr-only">Beds</label>
+                        <select name="beds" class="form-control" onchange="this.form.submit()">
+                            <!-- Preserve the form input -->
+                        {% comment %} <option selected="true" disabled="disabled">Bedrooms (Any)</option> {% endcomment %}
+                            {% for key,value in bedroom_choices.items %}
+                            <option value="{{ key }}" {% if key == values.beds %} selected {% endif %}>
+                                {{ value }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 mb-4">
+                        <select name="price" class="form-control" onchange="this.form.submit()">
+                            <option selected="true" disabled="disabled">Any Price</option>
+                            <!-- Preserve the form input -->
+                            {% for key,value in price_choices.items %}
+                            <option value="{{ key }}" {% if key == values.price %} selected {% endif %}>
+                                {{ value }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div> 
+                    {% comment %} <div class="col-lg-3 col-md-3 col-sm-3 mb-4">
+                        <select name="new_construction" class="form-control" onchange="this.form.submit()">
+                            <option selected="true" disabled="disabled">New</option>
+                            {% for key,value in new_construction_choices.items %}
+                            <option value="{{ key }}" {% if key == values.new_construction %} selected {% endif %}>
+                                {{ value }}
+                            </option>
+                            {% endfor %} 
+                        </select>
+                    </div>  {% endcomment %}
+                    {% comment %} <div class="col-lg-3 col-md-3 col-sm-3 mb-4">
+                        <select name="more" class="form-control" onchange="this.form.submit()">
+                            <option>
+                                <input type='checkbox' {% if value == yes %} checked {% endif %} />Gated Community
+                            </option>
+                            <option>
+                                <input type='checkbox' {% if value == yes %} checked {% endif %} />New Construction
+                            </option>
+                            <option>
+                                <input type='checkbox' {% if value == yes %} checked {% endif %} />Ready to Move
+                            </option>
+                            <option>
+                                <input type='checkbox' {% if value == yes %} checked {% endif %} />Furnished
+                            </option>
+                        </select>
+                    </div>  {% endcomment %}
+                </div>
+            {% comment %} <button class="btn btn-secondary btn-block mt-4" type="submit">Submit form</button> {% endcomment %}
+        </form>
+    </div>
+</div>
+<!--Posts-->
+{% comment %} <div class="container"> {% endcomment %}
+
+<div class="row">
+    <div id="search-left" class="col-lg-9 col-md-9 col-sm-9">
+    <div id="wrapper">
+        <div class="row">
+            {% for post in posts %}
+            <div class="col-lg-4 col-md-4">
+                <div class="card border-0" style="width: 14.3 rem;">
+                    <a href="{% url 'post-detail' post.id post.slug %}">
+                    <img class="rounded card-img-top" src="{{ post.photo_main.url }}" style="width: 14.3rem; height: 10rem;"      alt="Responsive image"/>
+                    </a>
+                    <div class="card-body">
+                        <div class="row text-primary">
+                            <h5>₹ {{ post.price | intcomma }}</h5>
+                            <!-- Title -->
+                                {% comment %} <i class="row text-secondary"></i> {% endcomment %}
+                        </div>
+                        <div class="row text-secondary">
+                            bd:{{ post.beds }}bd 
+                            ba:{{ post.baths }}ba 
+                            sq:{{ post.sqft }}sqft
+                            <br/>
+                            {{ post.address }}
+                            <br/>
+                            <h6>{{ post.city }} in {{ post.city }} near {{ post.neighborhood }}</h6>
+                            {% comment %} <i class="fas fa-bed"></i> bd:{{ post.beds }}bd &nbsp
+                            <i class="fas fa-bath"></i> ba:{{ post.baths }}ba &nbsp
+                            <i class="fas fa-th-large"></i> sq:{{ post.sqft }}sqft {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+                <div>
+                <h4>Oops....no houses here !</h4>
+                </div>
+            {% endfor %} 
+        </div>
+    </div>
+    </div>
+    <div id="search-right" class="col-lg-3 col-md-3">
+        <img class="rounded" src="/media/property_pics/township.png" style="width: 43rem; height: 42rem;" alt=""/>
+    </div>
+ </div>
+</div>
+{% comment %} </div> {% endcomment %}
+
+<!--Paginator-->
+   {% comment %} {% for post in posts %}
+    <article class="media content-section">
+      <img class="rounded-circle article-img" src="{{ post.seller.profile.image.url }}" />
+      <div class="media-body">
+        <div class="article-metadata">
+          <a class="mr-2" href="{% url 'user-posts' post.seller.username %}">{{ post.seller }}</a>
+          <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+        </div>
+        <h2>
+          <a class="article-title" href="{% url 'post-detail' post.id post.slug %}">{{ post.title }}</a>
+        </h2>
+        <p class="article-content">{{ post.description }}</p>
+      </div>
+    </article>
+    {% endfor %}  {% endcomment %}
+    {% comment %} {% if is_paginated %} 
+      {% if page_obj.has_previous%}
+        <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+      {% endif %} 
+      {% for num in page_obj.paginator.page_range %} 
+        {% if page_obj.number == num %}
+          <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+          <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% endif %} 
+      {% endfor %} 
+      {% if page_obj.has_next %}
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+      {% endif %} 
+    {% endif %} {% endcomment %}
+
+    <!--Pagination-->
+
+    {% if is_paginated %} 
+      {% if page_obj.has_previous%}
+        <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+      {% endif %} 
+      {% for num in page_obj.paginator.page_range %} 
+        {% if page_obj.number == num %}
+          <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+          <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% endif %} 
+      {% endfor %} 
+      {% if page_obj.has_next %}
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+      {% endif %} 
+    {% endif %}
+
+{% endblock content %}

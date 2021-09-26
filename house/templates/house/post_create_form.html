@@ -1,0 +1,64 @@
+{% extends 'house/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}   
+<link rel="stylesheet" type="text/css" href="{% static 'house/hide_searchbar.css' %}">
+   
+    <section class="section-padding">
+        <div class="container">
+            <div>
+                {% include 'house/snippet/alert_messages.html'%}
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h5>Create New Post</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-8 mx-auto">
+                    <div class="card padding-card">
+                        <div class="card-header">
+                            <ul class="nav nav-tabs card-header-tabs" data-tabs="tabs" id="createtabs">
+                                <li class="nav-item">
+                                    <a class="nav-item nav-link text-secondary" data-toggle="tab" href="#saleform">For Sale</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-item nav-link text-secondary" data-toggle="tab" href="#rentalform">For Rent</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content">
+                                <!-- Sale From -->
+                                <div class="tab-pane" id="saleform">
+                                    <form method="post" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        {% include 'house/snippet/post_create_sale_form.html' %}
+                                        <br>
+                                        <button type="submit" class="btn btn-success btn-block">Submit</button>
+                                        <br>
+                                    </form>
+                                </div> 
+                                <!-- Rental From -->
+                                <div class="tab-pane" id="rentalform">
+                                    <form method="post" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        {% include 'house/snippet/post_create_rental_form.html' %}
+                                        <br>
+                                        <button type="submit" class="btn btn-success btn-block">Submit</button>
+                                        <br>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}  

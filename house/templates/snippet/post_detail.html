@@ -1,0 +1,40 @@
+{% extends "house/base.html" %} 
+{% block content %}
+<article class="media content-section">
+  <img
+    class="rounded-circle article-img"
+    src="{{ object.seller.profile.image.url }}"
+  />
+  <div class="media-body">
+    <div class="article-metadata">
+      <a class="mr-2" href="{% url 'user-posts' object.seller.username %}"
+        >{{ object.seller }}</a
+      >
+      <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+      {% if object.seller == user %}
+      <div>
+        <a
+          class="btn btn-secondary btn-sm mt-1 mb-1"
+          href="{% url 'post-update' object.id object.slug %}"
+          >Update</a
+        >
+        <a
+          class="btn btn-danger btn-sm mt-1 mb-1"
+          href="{% url 'post-delete' object.id object.slug %}"
+          >Delete</a
+        >
+      </div>
+      {% endif %}
+    </div>
+    <h2 class="article-title">{{ object.address }}</h2>
+    {% comment %} <p class="article-content">{{ object.description }}</p> {% endcomment %}
+    <p class="article-content">{{ object.city }}</p>
+    <p class="article-content">{{ object.beds }}</p>
+    <p class="article-content">{{ object.baths }}</p>
+    <p class="article-content">{{ object.price }}</p>
+    <p class="article-content">{{ object.sqft }}</p>
+    <p class="article-content">{{ object.active }}</p>
+    <p class="article-content">{{ object.date_posted }}</p>
+  </div>
+</article>
+{% endblock content %}

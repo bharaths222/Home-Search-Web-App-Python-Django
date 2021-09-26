@@ -1,0 +1,23 @@
+#list_background{
+    background-image: url("/house/static/images/slider/1.jpg"); 
+    }
+
+#list_background1{
+    background-image: url("/house/static/images/slider/2.jpg"); 
+    }
+
+#list_background2{
+    background-image: url("/house/static/images/slider/3.jpg"); 
+    }
+    
+#search_form{
+    margin-top: 100px;
+    margin-left: 180px;
+}
+    
+@media (max-width: 990px) {
+    #search_form{
+    margin: 100px;
+    margin-right:100px; 
+    }
+}

@@ -1,0 +1,70 @@
+
+    <div class="row fixed">
+        <div class="col-md-7">
+            <form action="{% url 'house-home' city.slug neighborhood.slug %}" id="filtersForm">
+                <div class="form-row">
+                    <div class="col-md-2.5">
+                        <select name="house_type" class="form-control text-dark border" id="selecthouse">
+                            {% for key,value in house_type_choices.items %}
+                            <option {% if key == values.house_type %} selected {% endif %}>
+                                {{ value }} 
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-1.5">
+                        <label class="sr-only">Beds</label>
+                        <select name="beds" class="form-control" id="selectbed">
+                            {% for key,value in bedroom_choices_2.items %}
+                            <option value="{{ key }}" {% if key in values.beds %} selected {% endif %}>
+                                {% if value == "1" %}
+                                {{ value }} Bed
+                                {% else %}
+                                {{ value }} Beds
+                                {% endif %}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                        {% include "house/snippet/filters_price.html" %}
+                    <div class="col-md-2">
+                        <div class="dropdown mega-dropdown" onclick="btnToggle()">
+                            <button class="btn btn-info dropdown-toggle bg-white text-dark border" id="dropbutton" style="width:100px;" type="button" data-toggle="dropdown">
+                                More
+                            </button>
+                            <div class="dropdown-menu" id="moredropdown" aria-labelledby="dropdownMenuButton" style="padding-left:10px; width:150px">
+                                <input type="checkbox" name="new_construction" id="more"
+                                value="yes"  {% if values.new_construction %} checked {% endif %}
+                                > New Construction<br/> <!--onchange="this.form.submit()"-->
+                                <input type="checkbox" name="ready_to_move" id="more"
+                                value="yes"  {% if values.ready_to_move %} checked {% endif %}
+                                > Ready To Move<br/>
+                                <input type="checkbox" name="furnished" id="more"
+                                value="yes"  {% if values.furnished %} checked {% endif %}
+                                > Furnished<br/>
+                                <input type="checkbox" name="gated_community" id="more"
+                                value="yes"  {% if values.gated_community %} checked {% endif %}
+                                > Gated Community<br/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="dropdown mega-dropdown" >
+                            <button class="btn btn-info dropdown-toggle bg-white text-dark border" style="width:80px; margin-left:-27px;" type="button"  data-toggle="dropdown">
+                                Sort
+                            </button>
+                            <div class="dropdown-menu" id="sortdropdown" aria-labelledby="dropdownMenuButton" style="padding-left:10px; width:100px">
+                                <input type="radio" name="sort" value="most_recent" {% if values.sort == "most_recent" %} checked {% endif %}> Most Recent<br/>
+                                <input type="radio" name="sort" value="price_low_high" {% if values.sort == "price_low_high" %} checked {% endif %}> Price(low-high)<br/>
+                                <input type="radio" name="sort" value="price_high_low" {% if values.sort == "price_high_low" %} checked {% endif %}> Price(high-low)<br/>
+                                <input type="radio" name="sort" value="sqft" {% if values.sort == "sqft"%} checked {% endif %}> Sqft<br/>
+                            </div>
+                        </div>
+                    </div>
+                    <input id="submit" type="submit">
+                </div>
+            </form>
+        </div>
+        {% comment %} <div class="col-md-5">
+        </div> {% endcomment %}
+    </div>

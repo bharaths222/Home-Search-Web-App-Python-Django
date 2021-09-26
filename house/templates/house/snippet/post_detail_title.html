@@ -1,0 +1,28 @@
+<div class="house-detail-title">    
+    <div class="row" style='margin-left:-20px'>
+        {% if object.category.title == "For Sale" %}
+            <h5>{{ object.beds }}bed - {{ object.baths }}bath - {{ object.house_type }} - {{ object.pk }} </h5>
+            <div style="padding-left:15px; padding-bottom:5px; margin-top:-2px">
+                <form method="POST"> 
+                    {% csrf_token %}
+                    {% include "house/snippet/post_save.html" %}
+                </form>
+            </div>
+        <h5 id='hearttext' style="font-size:20px; color:gray; padding-top:2px; font-family:sans-serif"></h5>
+        {% elif object.category.title == "For Rent" %}
+            <h5>{{ object.beds }}bed - {{ object.baths }}bath - {{ object.rental_type }} - {{ object.pk }} </h5>
+            <div style="padding-left:15px; padding-bottom:5px; margin-top:-2px">
+            <form method="POST"> 
+                {% csrf_token %}
+                {% include "house/snippet/post_save.html" %}
+            </form>
+        </div>
+        <h5 id='hearttext' style="font-size:20px; color:gray; padding-top:2px; font-family:sans-serif"></h5>
+        {% endif %} 
+    </div>
+</div>
+
+<script>
+   var context_has_this_post_saved_by_user = "{{ has_this_post_saved_by_user }}";
+   var context_has_this_rental_saved_by_user = "{{ has_this_rental_saved_by_user }}";
+</script>

@@ -1,0 +1,28 @@
+{% extends "house/base.html" %}
+{% load static %} 
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'house/hide_searchbar.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'house/home_background.css' %}">
+
+<div class='col-md-12 mx-auto'> 
+  <div style="background: url(/media/home_page/background_3.jpeg);" class="rounded page-holder bg-cover">
+    
+    <div class="container-fluid col-md-12" style="padding-top: 80px;">
+      <h1 class="text-center mb-5" id="housecaption">get a house from your couch</h1>
+      {% include 'house/snippet/search_form.html' %}
+      <br>
+      <br>
+      <!--Comment
+      <div class='row'>
+          <div class='col-md-6 mx-auto'> 
+              <img src="https://d3nn873nee648n.cloudfront.net/900x600/18756/220-SM859051.jpg" class='img-fluid'/>
+              {% comment %} <img src="{% static 'home_page/background.jpg' %}" alt='House'/> {% endcomment %}
+          </div>
+      </div>
+      -->
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+{% comment %} <a class="nav-item nav-link" href="{% url 'house-about' %}">About</a> {% endcomment %}
