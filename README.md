@@ -4,7 +4,7 @@
 
 ### Goal - to provide the best product, design, and user experience.
 
-### Technologies used - Python, Django, Javascript, HTML5, CSS, Bootstrap4, Azure SQL Server.
+### Technologies used - Python3, Django, Javascript, HTML5, CSS, Bootstrap4, Azure SQL Server.
 
 
 ## Pages and Features
