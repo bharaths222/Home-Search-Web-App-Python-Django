@@ -2,7 +2,7 @@
 
 ## A web app for users to buy, sell and rent homes hassle-free in various cities and neighborhoods.
 
-## The main goal of this project is to provide the best product, design, and user experience.
+### Goal - to provide the best product, design, and user experience.
 
 ### Technologies used - Python, Django, Javascript, HTML5, CSS, Bootstrap4, Azure SQL Server.
 
