@@ -68,7 +68,7 @@ Posts having featured tags and with similar attributes in the same and nearby ne
 
 ## License 
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/bharathsepuri/Home-Search-Web-App-Python-Django/blob/main/LICENSE![image](https://user-images.githubusercontent.com/25309450/135046065-2aff5708-6180-4c5e-95ed-efacffd3b35e.png) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/bharathsepuri/Home-Search-Web-App-Python-Django/blob/main/LICENSE.md) file for details.
 
 
 
