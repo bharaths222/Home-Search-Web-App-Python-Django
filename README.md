@@ -29,7 +29,7 @@ Designed to have an intuitive and straightforward user interface with search bar
 
 Posts are listed with images, price, attributes, and featured tags with dynamic filters and search.
 
-![posts listing](https://user-images.githubusercontent.com/25309450/135039774-4b3c9fb2-4bd6-4279-b557-bdc238f70b46.png)
+![posts listing](https://user-images.githubusercontent.com/25309450/135058248-3259711e-c728-4f36-bba7-8fb72ff5a1a3.png)
 
 
 
@@ -37,7 +37,7 @@ Posts are listed with images, price, attributes, and featured tags with dynamic 
 
 Post detail with enlarged images and a feature that allows users to save the post.
 
-![posts detail](https://user-images.githubusercontent.com/25309450/135040162-3e07ddfe-2b66-4caa-9099-65e991e41a7e.png)
+![post detail](https://user-images.githubusercontent.com/25309450/135058260-41cd3267-b5cd-4d07-b19b-9715c06b3ee9.png)
 
 
 
@@ -45,7 +45,7 @@ Post detail with enlarged images and a feature that allows users to save the pos
 
 Posts that the user saves from the posts on the listing page.
 
-![user saved posts](https://user-images.githubusercontent.com/25309450/135040315-43b9efa7-acb2-4c1c-acef-3073d8645133.png)
+![user saved posts](https://user-images.githubusercontent.com/25309450/135058283-514f4a7b-9694-48ad-bb11-f370eea4969a.png)
 
 
 
@@ -53,14 +53,15 @@ Posts that the user saves from the posts on the listing page.
 
 Posts created by the user. And features to update and preview the posts.
 
-![user created posts](https://user-images.githubusercontent.com/25309450/135040632-56be723a-36fe-4524-ad21-81e4181651f8.png)
+![user created posts](https://user-images.githubusercontent.com/25309450/135058316-496f0fd0-054f-48ba-a5ca-91d9c13ebe6f.png)
+
 
 
 ## Featured and Similar Posts
 
 Posts having featured tags and with similar attributes in the same and nearby neighborhoods.
 
-![featured and similar posts](https://user-images.githubusercontent.com/25309450/135041009-454a5cb7-fdd9-4b3b-8f1e-85be14edf55a.png)
+![featured   similar posts](https://user-images.githubusercontent.com/25309450/135058334-7cedbe11-81f6-4602-8ce4-40c6413bbada.png)
 
 
 
