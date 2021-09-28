@@ -1,17 +1,16 @@
-# Houch - Home Search Web App 
+# Home Search Web App 
 
 ## A web app for users to buy, sell and rent homes hassle-free in various cities and neighborhoods.
 
 ### The main goal of this project is to provide the best product, design, and user experience.
 
-#### Technologies used - Python, Django, Javascript, HTML5, CSS, Bootstrap4, Azure SQL Server.
+### Technologies used - Python, Django, Javascript, HTML5, CSS, Bootstrap4, Azure SQL Server.
 
 
 ## Pages and Features
 
-*	[Home Page](https://github.com/bharathsepuri/Home-Search-Web-App-Python-Django#home-page![image](https://user-images.githubusercontent.com/25309450/135045179-73ba9ccd-28d5-4f3e-bba3-ebc04ea0cf56.png)
-)
-*	Posts Listing 
+*	[Home Page](https://github.com/bharathsepuri/Home-Search-Web-App-Python-Django#home-page)
+*	[Posts Listing](https://github.com/bharathsepuri/Home-Search-Web-App-Python-Django#posts-listing)
 *	Post Detail View
 *	User Saved Posts 
 *	User Created Posts 
