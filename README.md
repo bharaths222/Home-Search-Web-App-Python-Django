@@ -2,7 +2,7 @@
 
 ## A web app for users to buy, sell and rent homes hassle-free in various cities and neighborhoods.
 
-### The main goal of this project is to provide the best product, design, and user experience.
+## The main goal of this project is to provide the best product, design, and user experience.
 
 ### Technologies used - Python, Django, Javascript, HTML5, CSS, Bootstrap4, Azure SQL Server.
 
@@ -11,10 +11,10 @@
 
 *	[Home Page](https://github.com/bharathsepuri/Home-Search-Web-App-Python-Django#home-page)
 *	[Posts Listing](https://github.com/bharathsepuri/Home-Search-Web-App-Python-Django#posts-listing)
-*	Post Detail View
-*	User Saved Posts 
-*	User Created Posts 
-*	Featured and Similar Posts
+*	[Post Detail View](https://github.com/bharathsepuri/Home-Search-Web-App-Python-Django#post-detail-view)
+*	[User Saved Posts](https://github.com/bharathsepuri/Home-Search-Web-App-Python-Django#user-saved-posts)
+*	[User Created Posts](https://github.com/bharathsepuri/Home-Search-Web-App-Python-Django#user-created-posts)
+*	[Featured and Similar Posts](https://github.com/bharathsepuri/Home-Search-Web-App-Python-Django#featured-and-similar-posts)
 
 
 ## Home Page
@@ -68,7 +68,7 @@ Posts having featured tags and with similar attributes in the same and nearby ne
 
 ## License 
 
-This project is licensed under the MIT License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/bharathsepuri/Home-Search-Web-App-Python-Django/blob/main/LICENSE![image](https://user-images.githubusercontent.com/25309450/135046065-2aff5708-6180-4c5e-95ed-efacffd3b35e.png) file for details.
 
 
 
