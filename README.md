@@ -1,6 +1,6 @@
 # Home Search Web App 
 
-## A web app for users to buy, sell and rent homes hassle-free in various cities and neighborhoods.
+## A web app for users to buy, sell and rent homes hassle-free in major cities and neighborhoods.
 
 ### Goal - to provide the best product, design, and user experience.
 
